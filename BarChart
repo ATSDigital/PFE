@@ -1,1 +1,35 @@
+<!DOCTYPE html>
 
+<html lang="en">
+   
+        <meta charset="utf-8" />
+        <title>Chart.js demo</title>
+        <!-- import plugin script -->
+        <script src='Chart.js'></script>
+        <script src="jquery-2.1.4.min.js"></script>
+    </head>
+    <body>
+        
+        <!-- bar chart canvas element -->
+        <canvas id="income" width="600" height="400"></canvas>
+        <script>
+        
+            // bar chart data
+            var barData = {
+                labels : ["Lifehacker","Jezebel","Gawker","io9","Kotaku","Deadspin","Jalopnik","Gizmodo"],
+                datasets : [
+                    {
+                        fillColor : "rgba(73,188,170,0.4)",
+                        strokeColor : "#48A4D1",
+                        data : [30,20,30,40,60,50,20,40]
+                    },
+                   
+                ]
+            }
+            // get bar chart canvas
+            var income = document.getElementById("income").getContext("2d");
+            // draw bar chart
+            new Chart(income).Bar(barData);
+        </script>
+    </body>
+</html>
